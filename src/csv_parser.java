@@ -16,7 +16,7 @@ class csv_parser {
         CsvManager<Student> studentDatabase = new CsvManager<>("students.csv", new StudentGenerator());
         studentDatabase.clearAll();
 
-        Collection<Student> students = new ArrayList<>() {
+        Collection<Student> students = new ArrayList<Student>() {
             {
                 add(Student.create("Arnold", "Schwarzenegger", 50, "IA-33"));
                 add(Student.create("Jimi", "Hendrix", 60, "IA-34"));
@@ -213,7 +213,7 @@ class Student implements CsvSerializable {
 
     @Override
     public String serializeToString() {
-        return String.format("%s,%s,%s,%d", name, surname, group, age);
+        return String.format("%s,%s,%d,%s", name, surname, age, group);
     }
 
     @Override
@@ -222,8 +222,8 @@ class Student implements CsvSerializable {
         if (parts.length == 4) {
             name = parts[0];
             surname = parts[1];
-            group = parts[2];
-            age = Integer.parseInt(parts[3]);
+            age = Integer.parseInt(parts[2]);
+            group = parts[3];
         } else {
             throw new IllegalArgumentException("Invalid string deserialization format");
         }
