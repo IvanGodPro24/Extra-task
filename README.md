@@ -10,7 +10,7 @@ public class csv_parser {
     public static void main(String[] params) {
         // Ваш код...
     }
-}
+} ```
 
 ### Встановлення
 1. Склонуйте репозиторій: git clone https://github.com/IvanGodPro24/Extra-task.git
