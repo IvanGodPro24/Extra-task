@@ -12,7 +12,7 @@
 ### Використання
 ```java
 // Приклад використання основного класу csv_parser
-public class csv_parser {
+class csv_parser {
     public static void main(String[] params) {
         // Ваш код...
     }
